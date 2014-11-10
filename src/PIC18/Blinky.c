@@ -7,25 +7,23 @@
 #include "../18c.h"
 
 #if !(defined(__XC) || defined(__18CXX))
-  #include "usart.h"
+  #include <usart.h>
 #endif // __18CXX
-
-#pragma config OSC = INTIO67, PWRT = ON, WDT = OFF, LVP = OFF, DEBUG = ON
 
 void makeDelay(int loop) {
   unsigned long i;
   for(i = 0; i < loop; i++);
 }
 
-void configureLED() {
+void configureLED(void) {
   TRISCbits.TRISC0 = 0;
 }
 
-void onLED() {
+void onLED(void) {
   PORTCbits.RC0 = 1;
 }
 
-void offLED() {
+void offLED(void) {
   PORTCbits.RC0 = 0;
 }
 

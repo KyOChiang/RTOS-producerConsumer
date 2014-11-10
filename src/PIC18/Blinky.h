@@ -14,9 +14,9 @@
 #define PIN_HIGH 1
 
 void makeDelay(int loop);
-void configureLED();
-void onLED();
-void offLED();
+void configureLED(void);
+void onLED(void);
+void offLED(void);
 
 #endif // Blinky_H
 

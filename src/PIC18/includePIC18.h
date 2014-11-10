@@ -13,7 +13,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Blinky.h"
-#include "Loopback.h"
+//#include "Loopback.h"
 #include "Clock.h"
 #include "Led2.h"
 #include "SevenSeg.h"
@@ -27,6 +27,8 @@
   #include "timers.h"
 #else
     #include <usart.h>
+    #include <spi.h>
+    #include <timers.h>
 #endif // __18CXX
 
 #pragma config OSC = INTIO67, PWRT = ON, WDT = OFF, LVP = OFF, DEBUG = ON

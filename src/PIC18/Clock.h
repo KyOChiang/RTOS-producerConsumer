@@ -8,9 +8,10 @@
 
 extern volatile unsigned long clock;
 
-void initClock();
-unsigned long getCLOCK();
-char hasTimer0Overflowed();
-void clearTimer0Overflowed();
+void initClock(void);
+unsigned long getCLOCK(void);
+char hasTimer0Overflowed(void);
+void clearTimer0Overflowed(void);
+void timer0Isr(void);
 
 #endif // Clock_H

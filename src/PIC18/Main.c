@@ -9,7 +9,7 @@ void closeModule(){
     CloseSPI();
 }
 
-int main(int argc, char** argv) {
+void main(void) {
   
   LoopbackData loopbackData;
   Led2Data led2Data;
@@ -29,7 +29,7 @@ int main(int argc, char** argv) {
     led2SM(&led2Data);
     _7SegmentSM(&_7SegData);
   }
-  closeModule();return (EXIT_SUCCESS);
+  closeModule();
 }
 
 

@@ -1,6 +1,11 @@
 #include "SevenSeg.h"
 #include "..\\18c.h"
 #include "Clock.h"
+#if !(defined(__XC) || defined(__18CXX))
+  #include "spi.h"
+#else
+    #include <spi.h>
+#endif // __18CXX
 
 #define   SMPEND        0b10000000  
 #define   MODE_11       0b00000011 
