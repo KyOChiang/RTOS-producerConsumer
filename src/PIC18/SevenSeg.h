@@ -1,21 +1,19 @@
-#ifndef SevenSeg_H
-#define SevenSeg_H
+#ifndef SEVENSEG_H_
+#define SEVENSEG_H_
 
-typedef enum {
-  _7SEG_INIT,
-  _7SEG_WAITING
-} SevenSegmentState ;
+typedef enum{
+    _7SEG_INIT,
+    _7SEG_WAITING
+}_7SEG_STATE;
 
-typedef struct SevenSegmentData SevenSegmentData;
-struct SevenSegmentData {
-  SevenSegmentState state;
-  unsigned long currentClock;
-  char count;
-};
+typedef struct{
+    unsigned long clock;
+    _7SEG_STATE state;
+    int counter;
+}_7SEG;
 
-void init7Segment(SevenSegmentData *data);
-void init7SegmentHardware();
-void sevenSegmentSM(SevenSegmentData *data);
+void init7SegmentHW();
+void init7Segment(_7SEG* _7seg);
+void _7SegmentSM(_7SEG* _7seg);
 void write7Segment(char data);
-
-#endif // SevenSeg_H
+#endif // SEVENSEG_H_

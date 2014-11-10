@@ -1,59 +1,39 @@
-/* 
- * File:   Main.c
- * Author: Chiew Bing Xuan
- *
- * Created on September 29, 2014, 11:19 AM
- */
+/* File:   Main.c
+ * Author: Chiang Choon Yong
+ * Created on September 29, 2014, 11:19 AM*/
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "Blinky.h"
-#include "Loopback.h"
-#include "Clock.h"
-#include "LEDSM.h"
-#include "SevenSeg.h"
-#include "UsartLoopback.h"
-#include "../18c.h"
-#if !(defined(__XC) || defined(__18CXX))
-  #include "usart.h"
-  #include "spi.h"
-  #include "timers.h"
-#else
-    #include <usart.h>
-#endif // __18CXX
+#include "includePIC18.h"
 
-#pragma config OSC = INTIO67, PWRT = ON, WDT = OFF, LVP = OFF, DEBUG = ON
-
-#define setFreq8MHz() (OSCCONbits.IRCF = 7)
-
-#define configureUsartTo8Bits9600Baud()\
-          OpenUSART(USART_TX_INT_OFF &\
-                    USART_RX_INT_OFF &\
-                    USART_ASYNCH_MODE &\
-                    USART_EIGHT_BIT &\
-                    USART_CONT_RX &\
-                    USART_BRGH_HIGH, 51);
+void closeModule(){
+    CloseUSART();
+    CloseSPI();
+}
 
 int main(int argc, char** argv) {
+  
   LoopbackData loopbackData;
-  LEDData ledData;
-  SevenSegmentData sevenSegData;
+  Led2Data led2Data;
+  _7SEG _7SegData;
 
   setFreq8MHz();
   configureUsartTo8Bits9600Baud();
+  configureLED();
+
   initClock();
   initUsartLoopback(&loopbackData);
-  initLed(&ledData);
-  init7Segment(&sevenSegData);
+  initTasking(&led2Data);
+  init7Segment(&_7SegData);
+
   while(1) {
     usartLoopbackSM(&loopbackData);
-    ledSM(&ledData);
-    sevenSegmentSM(&sevenSegData);
+    led2SM(&led2Data);
+    _7SegmentSM(&_7SegData);
   }
-  CloseUSART();
-  CloseSPI();
+  closeModule();return (EXIT_SUCCESS);
+}
 
-/*
+
+/* Test to blink LED.
   configureLED();
   while(1) {
       onLED();
@@ -63,5 +43,7 @@ int main(int argc, char** argv) {
   }
 */
 
-  return (EXIT_SUCCESS);
-}
+/*Using SWITCH CASE statement
+  LEDData ledData;
+  initLed(&ledData);
+  ledSM(&ledData);*/

@@ -1,0 +1,6 @@
+Version 3.2 HI-TECH Software Intermediate Code
+[; ;Clock.h: 9: extern volatile unsigned long clock;
+[; ;Clock.h: 11: void initClock();
+[; ;Clock.h: 12: unsigned long getCLOCK();
+[; ;Clock.h: 13: char hasTimer0Overflowed();
+[; ;Clock.h: 14: void clearTimer0Overflowed();

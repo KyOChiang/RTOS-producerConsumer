@@ -1,0 +1,127 @@
+Version 3.2 HI-TECH Software Intermediate Code
+[v F74 `(i ~T0 @X0 0 tf ]
+"5 ../src/PIC18/TaskControlBlock.h
+[s S2 `*S2 1 `uc 1 `i 1 `uc 1 `uc 1 `uc 1 `*F74 1 ]
+[n S2 TCB next priority dataStack status bsr Wreg task ]
+[; ;stdio.h: 8: typedef int ptrdiff_t;
+[; ;stdio.h: 9: typedef unsigned size_t;
+[; ;stdio.h: 10: typedef unsigned short wchar_t;
+[; ;stdarg.h: 7: typedef void * va_list[1];
+[; ;stdarg.h: 10: extern void * __va_start(void);
+[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;stdio.h: 23: extern int errno;
+[; ;stdio.h: 54: struct __prbuf
+[; ;stdio.h: 55: {
+[; ;stdio.h: 56: char * ptr;
+[; ;stdio.h: 57: void (* func)(char);
+[; ;stdio.h: 58: };
+[; ;conio.h: 17: extern int errno;
+[; ;conio.h: 20: extern void init_uart(void);
+[; ;conio.h: 22: extern char getch(void);
+[; ;conio.h: 23: extern char getche(void);
+[; ;conio.h: 24: extern void putch(char);
+[; ;conio.h: 25: extern void ungetch(char);
+[; ;conio.h: 27: extern __bit kbhit(void);
+[; ;conio.h: 31: extern char * cgets(char *);
+[; ;conio.h: 32: extern void cputs(const char *);
+[; ;stdio.h: 99: extern int cprintf(char *, ...);
+[; ;stdio.h: 104: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 194: extern char * gets(char *);
+[; ;stdio.h: 195: extern int puts(const char *);
+[; ;stdio.h: 196: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 197: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 198: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 199: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 200: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 201: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 205: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 206: extern int printf(const char *, ...);
+[; ;TaskControlBlock.h: 4: typedef struct TCB TCB;
+[; ;TaskControlBlock.h: 5: struct TCB{
+[; ;TaskControlBlock.h: 6: TCB* next;
+[; ;TaskControlBlock.h: 7: char priority;
+[; ;TaskControlBlock.h: 8: int dataStack;
+[; ;TaskControlBlock.h: 9: char status;
+[; ;TaskControlBlock.h: 10: char bsr;
+[; ;TaskControlBlock.h: 11: char Wreg;
+[; ;TaskControlBlock.h: 12: int (*task)(void);
+[; ;TaskControlBlock.h: 13: };
+[; ;TaskControlBlock.h: 15: int compareTCBPriority(void *elementOfInterest, void *elementInList);
+"4 ../src/PIC18/TaskControlBlock.c
+[v _compareTCBPriority `(i ~T0 @X0 1 ef2`*v`*v ]
+{
+[; ;TaskControlBlock.c: 4: int compareTCBPriority(void *elementOfInterest, void *elementInList){
+[e :U _compareTCBPriority ]
+[v _elementOfInterest `*v ~T0 @X0 1 r1 ]
+[v _elementInList `*v ~T0 @X0 1 r2 ]
+[f ]
+"5
+[v _EOI `*S2 ~T0 @X0 1 a ]
+"6
+[v _EIL `*S2 ~T0 @X0 1 a ]
+[; ;TaskControlBlock.c: 5: TCB* EOI;
+[; ;TaskControlBlock.c: 6: TCB* EIL;
+[; ;TaskControlBlock.c: 8: EOI = (TCB *)elementOfInterest;
+"8
+[e = _EOI -> _elementOfInterest `*S2 ]
+[; ;TaskControlBlock.c: 9: EIL = (TCB *)elementInList;
+"9
+[e = _EIL -> _elementInList `*S2 ]
+[; ;TaskControlBlock.c: 11: if(EOI != (0) && EIL == (0))
+"11
+[e $ ! && != _EOI -> -> 0 `i `*S2 == _EIL -> -> 0 `i `*S2 4  ]
+[; ;TaskControlBlock.c: 12: return 1;
+"12
+[e ) -> 1 `i ]
+[e $UE 3  ]
+[e :U 4 ]
+[; ;TaskControlBlock.c: 13: if(EOI != (0) && EIL != (0)){
+"13
+[e $ ! && != _EOI -> -> 0 `i `*S2 != _EIL -> -> 0 `i `*S2 5  ]
+{
+[; ;TaskControlBlock.c: 14: if(EOI->priority < EIL->priority)
+"14
+[e $ ! < -> . *U _EOI 1 `i -> . *U _EIL 1 `i 6  ]
+[; ;TaskControlBlock.c: 15: return 1;
+"15
+[e ) -> 1 `i ]
+[e $UE 3  ]
+[e $U 7  ]
+"16
+[e :U 6 ]
+[; ;TaskControlBlock.c: 16: else if(EOI->priority == EIL->priority)
+[e $ ! == -> . *U _EOI 1 `i -> . *U _EIL 1 `i 8  ]
+[; ;TaskControlBlock.c: 17: return 0;
+"17
+[e ) -> 0 `i ]
+[e $UE 3  ]
+[e $U 9  ]
+"18
+[e :U 8 ]
+[; ;TaskControlBlock.c: 18: else if(EOI->priority > EIL->priority)
+[e $ ! > -> . *U _EOI 1 `i -> . *U _EIL 1 `i 10  ]
+[; ;TaskControlBlock.c: 19: return 0;
+"19
+[e ) -> 0 `i ]
+[e $UE 3  ]
+[e :U 10 ]
+"20
+[e :U 9 ]
+[e :U 7 ]
+}
+[; ;TaskControlBlock.c: 20: }
+[e $U 11  ]
+"21
+[e :U 5 ]
+[; ;TaskControlBlock.c: 21: else return 0;
+[e ) -> 0 `i ]
+[e $UE 3  ]
+[e :U 11 ]
+[; ;TaskControlBlock.c: 22: return 0;
+"22
+[e ) -> 0 `i ]
+[e $UE 3  ]
+[; ;TaskControlBlock.c: 23: }
+"23
+[e :UE 3 ]
+}

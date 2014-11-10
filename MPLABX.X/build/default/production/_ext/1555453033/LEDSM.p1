@@ -1,0 +1,165 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"7 ../src/PIC18/LEDSM.c
+[c E1 0 1 2 .. ]
+[n E1 . LED_START LED_OFF LED_ON  ]
+"11 ../src/PIC18/LEDSM.h
+[s S1 `E1 1 `ul 1 ]
+[n S1 LEDData state currentClock ]
+"12 ../src/PIC18/Clock.h
+[v _getCLOCK `(ul ~T0 @X0 0 ef ]
+"18 ../src/PIC18/Blinky.h
+[v _onLED `(v ~T0 @X0 0 ef ]
+"17
+[v _configureLED `(v ~T0 @X0 0 ef ]
+"19
+[v _offLED `(v ~T0 @X0 0 ef ]
+[; ;LEDSM.h: 4: typedef enum {
+[; ;LEDSM.h: 5: LED_START,
+[; ;LEDSM.h: 6: LED_OFF,
+[; ;LEDSM.h: 7: LED_ON
+[; ;LEDSM.h: 8: } LEDState;
+[; ;LEDSM.h: 10: typedef struct LEDData LEDData;
+[; ;LEDSM.h: 11: struct LEDData {
+[; ;LEDSM.h: 12: LEDState state;
+[; ;LEDSM.h: 13: unsigned long currentClock;
+[; ;LEDSM.h: 14: };
+[; ;LEDSM.h: 16: void initLed(LEDData *ledData);
+[; ;LEDSM.h: 17: void ledSM(LEDData *ledData);
+[; ;Blinky.h: 16: void makeDelay(int loop);
+[; ;Blinky.h: 17: void configureLED();
+[; ;Blinky.h: 18: void onLED();
+[; ;Blinky.h: 19: void offLED();
+[; ;Clock.h: 9: extern volatile unsigned long clock;
+[; ;Clock.h: 11: void initClock();
+[; ;Clock.h: 12: unsigned long getCLOCK();
+[; ;Clock.h: 13: char hasTimer0Overflowed();
+[; ;Clock.h: 14: void clearTimer0Overflowed();
+"7 ../src/PIC18/LEDSM.c
+[v _initLed `(v ~T0 @X0 1 ef1`*S1 ]
+{
+[; ;LEDSM.c: 7: void initLed(LEDData *ledData) {
+[e :U _initLed ]
+[v _ledData `*S1 ~T0 @X0 1 r1 ]
+[f ]
+[; ;LEDSM.c: 8: ledData->state = LED_START;
+"8
+[e = . *U _ledData 0 -> . `E1 0 `E1 ]
+[; ;LEDSM.c: 9: }
+"9
+[e :UE 2 ]
+}
+"11
+[v _ledSM `(v ~T0 @X0 1 ef1`*S1 ]
+{
+[; ;LEDSM.c: 11: void ledSM(LEDData *ledData) {
+[e :U _ledSM ]
+[v _ledData `*S1 ~T0 @X0 1 r1 ]
+[f ]
+[; ;LEDSM.c: 12: switch(ledData->state) {
+"12
+[e $U 5  ]
+{
+[; ;LEDSM.c: 13: case LED_OFF:
+"13
+[e :U 6 ]
+[; ;LEDSM.c: 14: if(getCLOCK() - ledData->currentClock >= 488) {
+"14
+[e $ ! >= - ( _getCLOCK ..  . *U _ledData 1 -> -> -> 488 `i `l `ul 7  ]
+{
+[; ;LEDSM.c: 15: onLED();
+"15
+[e ( _onLED ..  ]
+[; ;LEDSM.c: 16: ledData->state = LED_ON;
+"16
+[e = . *U _ledData 0 -> . `E1 2 `E1 ]
+[; ;LEDSM.c: 17: ledData->currentClock = getCLOCK();
+"17
+[e = . *U _ledData 1 ( _getCLOCK ..  ]
+"18
+}
+[; ;LEDSM.c: 18: } else {
+[e $U 8  ]
+[e :U 7 ]
+{
+[; ;LEDSM.c: 19: ledData->state = LED_OFF;
+"19
+[e = . *U _ledData 0 -> . `E1 1 `E1 ]
+"20
+}
+[e :U 8 ]
+[; ;LEDSM.c: 20: }
+[; ;LEDSM.c: 21: break;
+"21
+[e $U 4  ]
+[; ;LEDSM.c: 23: case LED_START:
+"23
+[e :U 9 ]
+[; ;LEDSM.c: 24: ledData->currentClock = getCLOCK();
+"24
+[e = . *U _ledData 1 ( _getCLOCK ..  ]
+[; ;LEDSM.c: 25: configureLED();
+"25
+[e ( _configureLED ..  ]
+[; ;LEDSM.c: 26: ledData->state = LED_OFF;
+"26
+[e = . *U _ledData 0 -> . `E1 1 `E1 ]
+[; ;LEDSM.c: 27: break;
+"27
+[e $U 4  ]
+[; ;LEDSM.c: 29: case LED_ON:
+"29
+[e :U 10 ]
+[; ;LEDSM.c: 30: if(getCLOCK() - ledData->currentClock >= 488) {
+"30
+[e $ ! >= - ( _getCLOCK ..  . *U _ledData 1 -> -> -> 488 `i `l `ul 11  ]
+{
+[; ;LEDSM.c: 31: offLED();
+"31
+[e ( _offLED ..  ]
+[; ;LEDSM.c: 32: ledData->state = LED_OFF;
+"32
+[e = . *U _ledData 0 -> . `E1 1 `E1 ]
+[; ;LEDSM.c: 33: ledData->currentClock = getCLOCK();
+"33
+[e = . *U _ledData 1 ( _getCLOCK ..  ]
+"34
+}
+[; ;LEDSM.c: 34: } else {
+[e $U 12  ]
+[e :U 11 ]
+{
+[; ;LEDSM.c: 35: ledData->state = LED_ON;
+"35
+[e = . *U _ledData 0 -> . `E1 2 `E1 ]
+"36
+}
+[e :U 12 ]
+[; ;LEDSM.c: 36: }
+[; ;LEDSM.c: 37: break;
+"37
+[e $U 4  ]
+[; ;LEDSM.c: 39: default:
+"39
+[e :U 13 ]
+[; ;LEDSM.c: 41: ledData->state = LED_START;
+"41
+[e = . *U _ledData 0 -> . `E1 0 `E1 ]
+[; ;LEDSM.c: 42: break;
+"42
+[e $U 4  ]
+"43
+}
+[; ;LEDSM.c: 43: }
+[e $U 4  ]
+"12
+[e :U 5 ]
+[e [\ . *U _ledData 0 , $ -> . `E1 1 `E1 6
+ , $ -> . `E1 0 `E1 9
+ , $ -> . `E1 2 `E1 10
+ 13 ]
+"43
+[e :U 4 ]
+[; ;LEDSM.c: 44: }
+"44
+[e :UE 3 ]
+}

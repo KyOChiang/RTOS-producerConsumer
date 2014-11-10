@@ -1,6 +1,6 @@
 /* 
  * File:   Blinky.h
- * Author: Chiew Bing Xuan
+ * Author: Chiang Choon Yong
  *
  * Created on September 29, 2014, 11:19 AM
  */
@@ -13,7 +13,7 @@
 #define PIN_LOW 0
 #define PIN_HIGH 1
 
-void shortDelay();
+void makeDelay(int loop);
 void configureLED();
 void onLED();
 void offLED();

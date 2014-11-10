@@ -1,0 +1,65 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"5 ../src/PIC18/PriorityLinkedList.h
+[s S1 `*v 1 `*v 1 ]
+[n S1 PriorityLinkedList head tail ]
+[v F11 `(i ~T0 @X0 1 tf2`*v`*v ]
+[v F18 `(i ~T0 @X0 1 tf2`*v`*v ]
+[; ;PriorityLinkedList.h: 4: typedef struct PriorityLinkedList PriorityLinkedList;
+[; ;PriorityLinkedList.h: 5: struct PriorityLinkedList{
+[; ;PriorityLinkedList.h: 6: void* head;
+[; ;PriorityLinkedList.h: 7: void* tail;
+[; ;PriorityLinkedList.h: 8: };
+[; ;PriorityLinkedList.h: 10: void* addPriorityLinkedList(PriorityLinkedList *list, void *data, int compare(void *, void *));
+[; ;PriorityLinkedList.h: 11: void* removePriorityLinkedList(PriorityLinkedList *list, void *data, int compare(void *, void *));
+[; ;PriorityLinkedList.h: 12: void* removeFromHeadPriorityLinkedList(PriorityLinkedList *list);
+"3 ../src/PIC18/PriorityLinkedList.c
+[v _addPriorityLinkedList `(*v ~T0 @X0 1 ef3`*S1`*v`*F11 ]
+{
+[; ;PriorityLinkedList.c: 3: void* addPriorityLinkedList(PriorityLinkedList *list, void *data, int compare(void *, void *)){
+[e :U _addPriorityLinkedList ]
+[v _list `*S1 ~T0 @X0 1 r1 ]
+[v _data `*v ~T0 @X0 1 r2 ]
+[v F26 `(i ~T0 @X0 1 tf2`*v`*v ]
+[v _compare `*F26 ~T0 @X0 1 r3 ]
+[f ]
+[; ;PriorityLinkedList.c: 4: return 0;
+"4
+[e ) -> -> 0 `i `*v ]
+[e $UE 2  ]
+[; ;PriorityLinkedList.c: 5: }
+"5
+[e :UE 2 ]
+}
+"7
+[v _removePriorityLinkedList `(*v ~T0 @X0 1 ef3`*S1`*v`*F18 ]
+{
+[; ;PriorityLinkedList.c: 7: void* removePriorityLinkedList(PriorityLinkedList *list, void *data, int compare(void *, void *)){
+[e :U _removePriorityLinkedList ]
+[v _list `*S1 ~T0 @X0 1 r1 ]
+[v _data `*v ~T0 @X0 1 r2 ]
+[v F32 `(i ~T0 @X0 1 tf2`*v`*v ]
+[v _compare `*F32 ~T0 @X0 1 r3 ]
+[f ]
+[; ;PriorityLinkedList.c: 8: return 0;
+"8
+[e ) -> -> 0 `i `*v ]
+[e $UE 3  ]
+[; ;PriorityLinkedList.c: 9: }
+"9
+[e :UE 3 ]
+}
+"11
+[v _removeFromHeadPriorityLinkedList `(*v ~T0 @X0 1 ef1`*S1 ]
+{
+[; ;PriorityLinkedList.c: 11: void* removeFromHeadPriorityLinkedList(PriorityLinkedList *list){
+[e :U _removeFromHeadPriorityLinkedList ]
+[v _list `*S1 ~T0 @X0 1 r1 ]
+[f ]
+[; ;PriorityLinkedList.c: 12: return 0;
+"12
+[e ) -> -> 0 `i `*v ]
+[e $UE 4  ]
+[; ;PriorityLinkedList.c: 13: }
+"13
+[e :UE 4 ]
+}

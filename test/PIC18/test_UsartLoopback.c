@@ -2,42 +2,41 @@
 #include "UsartLoopback.h"
 #include "mock_usart.h"
 
-void setUp(void)
-{
+void setUp(void){}
+
+void tearDown(void){}
+
+void test_uartLoopbackSM_given_WAIT_DATA_should_stay_in_same_state(void){
+	LoopbackData data = {WAIT_DATA,0};
+	DataRdyUSART_ExpectAndReturn(0);
+	
+	usartLoopbackSM(&data);
+	TEST_ASSERT_EQUAL(WAIT_DATA,data.state);
 }
 
-void tearDown(void)
-{
+void test_uartLoopbackSM_given_WAIT_DATA_should_go_next_state_if_data_arrived(void){
+	LoopbackData data = {WAIT_DATA,0};
+	// Mock cant mock define macro, only function available, unless redefine in usart.h
+	DataRdyUSART_ExpectAndReturn(1);
+	getcUSART_ExpectAndReturn(0x5a);
+	
+	usartLoopbackSM(&data);
+	TEST_ASSERT_EQUAL(WAIT_TO_TX,data.state);
+	TEST_ASSERT_EQUAL(0x5a,data.dataByte);
 }
 
-void test_usartLoopbackSM_given_WAIT_DATA_should_stay_in_the_same_state(void) {
-	LoopbackData loopbackData = {.state = WAIT_DATA};
-  DataRdyUSART_ExpectAndReturn(0);
-  usartLoopbackSM(&loopbackData);
-  TEST_ASSERT_EQUAL(WAIT_DATA, loopbackData.state);
+void test_uartLoopbackSM_given_WAIT_TO_TX_should_stay_in_same_state(void){
+	LoopbackData data = {WAIT_TO_TX,0};
+	BusyUSART_ExpectAndReturn(1);
+	
+	usartLoopbackSM(&data);
+	TEST_ASSERT_EQUAL(WAIT_TO_TX,data.state);
 }
 
-void test_usartLoopbackSM_given_WAIT_DATA_and_byte_arrive_should_read_and_transition_to_WAIT_TO_TX(void) {
-	LoopbackData loopbackData = {.state = WAIT_DATA, .dataByte = 0x5a};
-  DataRdyUSART_ExpectAndReturn(1);
-  ReadUSART_ExpectAndReturn(0x5a);
-  usartLoopbackSM(&loopbackData);
-  TEST_ASSERT_EQUAL(WAIT_TO_TX, loopbackData.state);
-  TEST_ASSERT_EQUAL(0x5a, loopbackData.dataByte);
-}
-
-void test_usartLoopbackSM_given_WAIT_TO_TX_should_stay_in_the_same_state(void) {
-	LoopbackData loopbackData = {.state = WAIT_TO_TX};
-  BusyUSART_ExpectAndReturn(1);
-  usartLoopbackSM(&loopbackData);
-  TEST_ASSERT_EQUAL(WAIT_TO_TX, loopbackData.state);
-}
-
-void test_usartLoopbackSM_given_WAIT_TO_TX_and_tx_buffer_empty_should_send_back_same_byte_and_transition_to_WAIT_DATA(void) {
-	LoopbackData loopbackData = {.state = WAIT_TO_TX, .dataByte = 0x5a};
-  BusyUSART_ExpectAndReturn(0);
-  WriteUSART_Expect(0x5a);
-  usartLoopbackSM(&loopbackData);
-  TEST_ASSERT_EQUAL(WAIT_DATA, loopbackData.state);
-  TEST_ASSERT_EQUAL(0x5a, loopbackData.dataByte);
+void test_uartLoopbackSM_given_WAIT_TO_TX_should_go_WAIT_DATA_after_send_back_data(void){
+	LoopbackData data = {WAIT_TO_TX,0x5a};
+	BusyUSART_ExpectAndReturn(0);
+	putcUSART_Expect(0x5a);
+	usartLoopbackSM(&data);
+	TEST_ASSERT_EQUAL(WAIT_DATA,data.state);
 }

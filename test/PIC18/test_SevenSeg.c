@@ -1,76 +1,66 @@
 #include "unity.h"
 #include "SevenSeg.h"
 #include "p18f4520.h"
-#include "mock_Clock.h"
 #include "mock_spi.h"
+#include "mock_timers.h"
+#include "mock_Clock.h"
 
-#define   SPI_FOSC_4    0b00000000
-#define   MODE_11       0b00000011
-#define   SMPEND        0b10000000
+void setUp(void){}
 
-#define _7SEG_EN_PIN (PORTDbits.RD0)
-#define _7SEG_EN_TRIS (TRISDbits.TRISD0)
+void tearDown(void){}
 
-void setUp(void)
-{
+void test_init7Segment_to_reinitialize_state_of_7Seg(){
+	_7SEG sevenSEG = {.clock = 0, .state = _7SEG_WAITING, .counter = 0xff};
+	init7Segment(&sevenSEG);
+	TEST_ASSERT_EQUAL(_7SEG_INIT,sevenSEG.state);
 }
 
-void tearDown(void)
-{
+void test_7SegmentSM_to_init7SegmentHW_and_get_appropriate_data_into_7Seg(){
+	_7SEG sevenSEG = {.clock = 0, .state = _7SEG_INIT, .counter = 0xff};
+	OpenSPI_Expect(SPI_FOSC_4, MODE_11, SMPEND);
+	getCLOCK_ExpectAndReturn(110);
+	WriteSPI_ExpectAndReturn(0x77,0x77);
+	_7SegmentSM(&sevenSEG);
+	
+	TEST_ASSERT_EQUAL(_7SEG_WAITING,sevenSEG.state);
+	TEST_ASSERT_EQUAL(110,sevenSEG.clock);
+	TEST_ASSERT_EQUAL(0,sevenSEG.counter);
 }
 
-void test_init7Segment(void) {
-  SevenSegmentData data = {.state = _7SEG_WAITING, .count = 0xff, .currentClock = 0};
-  init7Segment(&data);
-
-  TEST_ASSERT_EQUAL(_7SEG_INIT, data.state);
+void test_7SegmentSM_should_display_1_at_7_segment_display_after_150ms(){
+	_7SEG sevenSEG = {.clock = 150, .state = _7SEG_WAITING, .counter = 0x00};
+	getCLOCK_ExpectAndReturn(638);
+	getCLOCK_ExpectAndReturn(638);
+	WriteSPI_ExpectAndReturn(0x77,0x77);
+	_7SegmentSM(&sevenSEG);
+	
+	TEST_ASSERT_EQUAL(_7SEG_WAITING,sevenSEG.state);
+	TEST_ASSERT_EQUAL(638,sevenSEG.clock);
+	TEST_ASSERT_EQUAL(1,sevenSEG.counter);
 }
 
-void test_init7SegmentHardware(void) {
-  OpenSPI_Expect(SPI_FOSC_4, MODE_11, SMPEND);
-  init7SegmentHardware();
-
-  TEST_ASSERT_EQUAL(0, _7SEG_EN_TRIS);
-  TEST_ASSERT_EQUAL(1, _7SEG_EN_PIN);
+void test_7SegmentSM_should_do_nothing_if_150ms_interval_not_passed(){
+	_7SEG sevenSEG = {.clock = 150, .state = _7SEG_WAITING, .counter = 0x01};
+	getCLOCK_ExpectAndReturn(280);
+	_7SegmentSM(&sevenSEG);
+	
+	TEST_ASSERT_EQUAL(_7SEG_WAITING,sevenSEG.state);
+	TEST_ASSERT_EQUAL(150,sevenSEG.clock);
+	TEST_ASSERT_EQUAL(1,sevenSEG.counter);
 }
 
-void test_sevenSegmentSM_given_state_in_7SEG_INIT_will_display_0(void) {
-  SevenSegmentData data = {.state = _7SEG_INIT, .count = 0xff, .currentClock = 0};
-  
-  OpenSPI_Expect(SPI_FOSC_4, MODE_11, SMPEND);
-  getClock_ExpectAndReturn(100);
-  WriteSPI_ExpectAndReturn(0xee, 0xee);
-  sevenSegmentSM(&data);
-
-  TEST_ASSERT_EQUAL(0, _7SEG_EN_TRIS);
-  TEST_ASSERT_EQUAL(1, _7SEG_EN_PIN);
-  TEST_ASSERT_EQUAL(_7SEG_WAITING, data.state);
-  TEST_ASSERT_EQUAL(0, data.count);
-  TEST_ASSERT_EQUAL(100, data.currentClock);
+void test_7SegmentSM_should_display_0_at_7_segment_display_after_0x0f(){
+	_7SEG sevenSEG = {.clock = 150, .state = _7SEG_WAITING, .counter = 0x0f};
+	getCLOCK_ExpectAndReturn(638);
+	getCLOCK_ExpectAndReturn(638);
+	WriteSPI_ExpectAndReturn(0x1e,0x1e);
+	_7SegmentSM(&sevenSEG);
+	
+	TEST_ASSERT_EQUAL(_7SEG_WAITING,sevenSEG.state);
+	TEST_ASSERT_EQUAL(638,sevenSEG.clock);
+	TEST_ASSERT_EQUAL(0,sevenSEG.counter);
 }
 
-void test_sevenSegmentSM_given_state_in_7SEG_WAITING_and_count_is_0x01_will_display_2(void) {
-  SevenSegmentData data = {.state = _7SEG_WAITING, .count = 0x01, .currentClock = 100};
-  
-  getClock_ExpectAndReturn(300);
-  WriteSPI_ExpectAndReturn(0xdc, 0xdc);
-  getClock_ExpectAndReturn(300);
-  sevenSegmentSM(&data);
 
-  TEST_ASSERT_EQUAL(_7SEG_WAITING, data.state);
-  TEST_ASSERT_EQUAL(0x02, data.count);
-  TEST_ASSERT_EQUAL(300, data.currentClock);
-}
 
-void test_sevenSegmentSM_given_state_in_7SEG_WAITING_and_count_is_0x0f_will_display_0(void) {
-  SevenSegmentData data = {.state = _7SEG_WAITING, .count = 0x0f, .currentClock = 100};
-  
-  getClock_ExpectAndReturn(300);
-  WriteSPI_ExpectAndReturn(0xee, 0xee);
-  getClock_ExpectAndReturn(300);
-  sevenSegmentSM(&data);
 
-  TEST_ASSERT_EQUAL(_7SEG_WAITING, data.state);
-  TEST_ASSERT_EQUAL(0x00, data.count);
-  TEST_ASSERT_EQUAL(300, data.currentClock);
-}

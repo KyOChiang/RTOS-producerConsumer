@@ -1,0 +1,26 @@
+
+# 1 "../src/PIC18/PriorityLinkedList.c"
+
+# 4 "../src/PIC18/PriorityLinkedList.h"
+typedef struct PriorityLinkedList PriorityLinkedList;
+struct PriorityLinkedList{
+void* head;
+void* tail;
+};
+
+void* addPriorityLinkedList(PriorityLinkedList *list, void *data, int compare(void *, void *));
+void* removePriorityLinkedList(PriorityLinkedList *list, void *data, int compare(void *, void *));
+void* removeFromHeadPriorityLinkedList(PriorityLinkedList *list);
+
+# 3 "../src/PIC18/PriorityLinkedList.c"
+void* addPriorityLinkedList(PriorityLinkedList *list, void *data, int compare(void *, void *)){
+return 0;
+}
+
+void* removePriorityLinkedList(PriorityLinkedList *list, void *data, int compare(void *, void *)){
+return 0;
+}
+
+void* removeFromHeadPriorityLinkedList(PriorityLinkedList *list){
+return 0;
+}

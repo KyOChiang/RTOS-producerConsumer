@@ -1,16 +1,38 @@
 #include "Clock.h"
+#include "Interrupt.h"
 #include "../18c.h"
+#include "TaskControlBlock.h"
+#include "PriorityLinkedList.h"
 
-unsigned long clock = 0;
+volatile unsigned long clock;
+char workingReg, bankSelectReg, statusReg, TOSHi, TOSLo;
 
-#define TIMER_INT_OFF  0b01111111  //Disable TIMER Interrupt
-#define T0_8BIT        0b11111111  //Timer0 is configured as an 8-bit timer/counter
-#define T0_SOURCE_INT  0b11011111  //Internal instruction cycle clock (CLKO) acts as source of clock
-#define T0_PS_1_8      0b11110010  //1:8 Prescale value
+void interrupt timer0Isr() {
+  #asm
+    movwf _workingReg
+    movff  STATUS, _statusReg
+    movff  BSR, _bankSelectReg
+
+//    movff TOSH, _TOSHi
+//    movff TOSL, _TOSLo
+  #endasm
+  // save all above in asm into running TCB
+  // Get the highest priority task from the priority linked list
+  // Insert the runningTCB into priority linked list
+  // Restore all data in high priority task to
+            // - TOS
+            // - BSR
+            // - STATUS
+            // - WREG
+  // return from interrupt
+  clock++;
+  clearTimer0Overflowed();
+}
 
 void initClock() {
   clock = 0;
-  OpenTimer0( TIMER_INT_OFF &
+  enableGlobalInterrupt();
+  OpenTimer0( TIMER_INT_ON &
               T0_8BIT &
               T0_SOURCE_INT &
               T0_PS_1_8);
@@ -20,11 +42,11 @@ void initClock() {
  * Return the micro-controller's clock since power-up.
  * 1 clock means 1.024 msec.
  */
-unsigned long getClock() {
-  if(hasTimer0Overflowed()) {
+unsigned long getCLOCK() {
+  /*if(hasTimer0Overflowed()) {
     clearTimer0Overflowed();
     clock++;
-  }
+  }*/
   return clock;
 }
 

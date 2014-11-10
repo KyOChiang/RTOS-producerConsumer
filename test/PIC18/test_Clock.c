@@ -8,8 +8,6 @@
 #define T0_SOURCE_INT  0b11011111  //Internal instruction cycle clock (CLKO) acts as source of clock
 #define T0_PS_1_8      0b11110010  //1:8 Prescale value
 
-extern unsigned long clock;
-
 void setUp(void)
 {
 }

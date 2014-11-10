@@ -1,0 +1,11 @@
+
+# 1 "../src/PIC18/Interrupt.c"
+
+# 9 "../src/PIC18/Clock.h"
+extern volatile unsigned long clock;
+
+void initClock();
+unsigned long getCLOCK();
+char hasTimer0Overflowed();
+void clearTimer0Overflowed();
+

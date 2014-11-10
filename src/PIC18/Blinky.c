@@ -1,22 +1,20 @@
-/* 
- * File:   Blinky.c
- * Author: Chiew Bing Xuan
- *
- * Created on September 29, 2014, 11:19 AM
- */
+/* File:   Blinky.c
+ * Author: Chiang Choon Yong
+ * Created on September 29, 2014, 11:19 AM*/
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "../18c.h"
+
 #if !(defined(__XC) || defined(__18CXX))
   #include "usart.h"
 #endif // __18CXX
 
 #pragma config OSC = INTIO67, PWRT = ON, WDT = OFF, LVP = OFF, DEBUG = ON
 
-void shortDelay() {
+void makeDelay(int loop) {
   unsigned long i;
-  for(i = 0; i < 10000; i++);
+  for(i = 0; i < loop; i++);
 }
 
 void configureLED() {
