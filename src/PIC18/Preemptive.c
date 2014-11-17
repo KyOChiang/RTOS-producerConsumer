@@ -10,18 +10,30 @@
 #include "..\\18c.h"
 #include "Preemptive.h"
 #include "TaskControlBlock.h"
+#include "PriorityLinkedList.h"
+#include "Type.h"
 
 TCB *runningTCB;
-TCB tcb[3];
+TCB allTcbs[3];
+PriorityLinkedList readyQueue;
+uint8 stacks[2][80];
+//uint8 stackOne[80];
+//uint8 stackTwo[80];
 
-void taskOne(){
+void createTask(TCB tcbs[],int index, void (* task)(void)){
+    addPriorityLinkedList(readyQueue, &tcbs[index]);
+    tcbs[index] = taskOne;
+    tcbs[index].stackPointer = (uint16)&stacks[index - 1];
+}
+
+void taskOne(void){
     int count = 0;
     while(1){
         count++;
     }
 }
 
-void taskTwo(){
+void taskTwo(void){
     int count = -1;
     while(1){
         count--;
@@ -29,9 +41,9 @@ void taskTwo(){
 }
 
 void initPriorityMultitasking(){
-    runningTCB = &tcb[0];
-    tcb[1].task = taskOne;
-    tcb[2].task = taskTwo;
+    runningTCB = &allTcbs[0];
+    createTask(allTcbs, 1, taskOne);
+    createTask(allTcbs, 2, taskTwo);
     //Add taskOne and tasktwo TCBs into the priority linkedlist
     while(1);
 }

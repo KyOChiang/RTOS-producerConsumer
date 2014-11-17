@@ -9,12 +9,20 @@ void closeModule(){
     CloseSPI();
 }
 
+char add(char a, char b){
+    int result;
+    result = a+b;
+    return result;
+}
+
+
 void main(void) {
   
   LoopbackData loopbackData;
   Led2Data led2Data;
   _7SEG _7SegData;
 
+  add(5,2);
   setFreq8MHz();
   configureUsartTo8Bits9600Baud();
   configureLED();

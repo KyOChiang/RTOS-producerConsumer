@@ -9,7 +9,8 @@
 #define	PREEMPTIVE_H
 #include "TaskControlBlock.h"
 
-
 extern TCB *runningTCB;
+void taskOne(void);
+void taskTwo(void);
 #endif	/* PREEMPTIVE_H */
 

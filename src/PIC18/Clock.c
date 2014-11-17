@@ -30,12 +30,12 @@ void clearTimer0Overflowed(void) {
 void timer0Isr(void) {
     
   _asm
-    movwf workingReg, ACCESS
+    movff WREG, workingReg
     movff STATUS, statusReg
     movff BSR, bankSelectReg
 
-//    movff TOSH, _TOSHi
-//    movff TOSL, _TOSLo
+    movff TOSH, TOSHi
+    movff TOSL, TOSLo
   _endasm
   // save all above in asm into running TCB
   // Get the highest priority task from the priority linked list

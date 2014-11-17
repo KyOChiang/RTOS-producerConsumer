@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "TaskControlBlock.h"
+#include "Type.h"
 
 int compareTCBPriority(void *elementOfInterest, void *elementInList){
 	TCB* EOI;

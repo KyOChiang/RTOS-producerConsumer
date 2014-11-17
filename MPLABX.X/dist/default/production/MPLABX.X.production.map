@@ -1,5 +1,5 @@
 MPLINK 4.38, Linker
-Linker Map File - Created Mon Nov 10 11:46:28 2014
+Linker Map File - Created Mon Nov 17 09:27:55 2014
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -10,51 +10,51 @@ Linker Map File - Created Mon Nov 10 11:46:28 2014
                    .cinit    romdata   0x00000e    program   0x00000e
          .code_SevenSeg.o       code   0x00001c    program   0x00024e
              .code_Led2.o       code   0x00026a    program   0x000190
-            .code_Clock.o       code   0x0003fa    program   0x0000e2
-    .code_UsartLoopback.o       code   0x0004dc    program   0x0000b0
-             .code_Main.o       code   0x00058c    program   0x0000a0
-               _cinit_scn       code   0x00062c    program   0x00009e
-            .code_uopen.o       code   0x0006ca    program   0x00008a
-           .code_Blinky.o       code   0x000754    program   0x00007e
-         .code_spi_open.o       code   0x0007d2    program   0x000068
-            .code_uread.o       code   0x00083a    program   0x00003e
-         .code_spi_writ.o       code   0x000878    program   0x00003c
-           .code_t0open.o       code   0x0008b4    program   0x000038
-           .code_uwrite.o       code   0x0008ec    program   0x00002e
-                    .code       code   0x00091a    program   0x000020
-             _startup_scn       code   0x00093a    program   0x00001c
-        .romdata___init.o    romdata   0x000956    program   0x000000
-        .idata_t0open.o_i    romdata   0x000956    program   0x000000
-        .romdata_t0open.o    romdata   0x000956    program   0x000000
-         .idata_uopen.o_i    romdata   0x000956    program   0x000000
-        .idata___init.o_i    romdata   0x000956    program   0x000000
-         .romdata_uopen.o    romdata   0x000956    program   0x000000
-        .romdata_uwrite.o    romdata   0x000956    program   0x000000
-         .idata_uread.o_i    romdata   0x000956    program   0x000000
-         .romdata_uread.o    romdata   0x000956    program   0x000000
-        .idata_uwrite.o_i    romdata   0x000956    program   0x000000
-         .idata_udefs.o_i    romdata   0x000956    program   0x000000
-      .romdata_spi_writ.o    romdata   0x000956    program   0x000000
-      .idata_spi_writ.o_i    romdata   0x000956    program   0x000000
-         .romdata_udefs.o    romdata   0x000956    program   0x000000
-         .idata_c018i.o_i    romdata   0x000956    program   0x000000
-         .romdata_c018i.o    romdata   0x000956    program   0x000000
-          .romdata_Main.o    romdata   0x000956    program   0x000000
-         .romdata_Clock.o    romdata   0x000956    program   0x000000
-        .romdata_Blinky.o    romdata   0x000956    program   0x000000
-          .romdata_Led2.o    romdata   0x000956    program   0x000000
-      .idata_SevenSeg.o_i    romdata   0x000956    program   0x000010
-      .romdata_SevenSeg.o    romdata   0x000956    program   0x000000
- .idata_UsartLoopback.o_i    romdata   0x000956    program   0x000000
- .romdata_UsartLoopback.o    romdata   0x000956    program   0x000000
-      .idata_spi_open.o_i    romdata   0x000956    program   0x000000
-      .romdata_spi_open.o    romdata   0x000956    program   0x000000
-          .idata_Led2.o_i    romdata   0x000966    program   0x000000
-        .idata_Blinky.o_i    romdata   0x000966    program   0x000000
-            .code_udefs.o       code   0x000966    program   0x000000
-         .idata_Clock.o_i    romdata   0x000966    program   0x000000
-          .idata_Main.o_i    romdata   0x000966    program   0x000000
-            .code_c018i.o       code   0x000966    program   0x000000
+             .code_Main.o       code   0x0003fa    program   0x0000f2
+            .code_Clock.o       code   0x0004ec    program   0x0000ec
+    .code_UsartLoopback.o       code   0x0005d8    program   0x0000b0
+               _cinit_scn       code   0x000688    program   0x00009e
+            .code_uopen.o       code   0x000726    program   0x00008a
+           .code_Blinky.o       code   0x0007b0    program   0x00007e
+         .code_spi_open.o       code   0x00082e    program   0x000068
+            .code_uread.o       code   0x000896    program   0x00003e
+         .code_spi_writ.o       code   0x0008d4    program   0x00003c
+           .code_t0open.o       code   0x000910    program   0x000038
+           .code_uwrite.o       code   0x000948    program   0x00002e
+                    .code       code   0x000976    program   0x000020
+             _startup_scn       code   0x000996    program   0x00001c
+        .romdata___init.o    romdata   0x0009b2    program   0x000000
+        .idata_t0open.o_i    romdata   0x0009b2    program   0x000000
+        .romdata_t0open.o    romdata   0x0009b2    program   0x000000
+         .idata_uopen.o_i    romdata   0x0009b2    program   0x000000
+        .idata___init.o_i    romdata   0x0009b2    program   0x000000
+         .romdata_uopen.o    romdata   0x0009b2    program   0x000000
+        .romdata_uwrite.o    romdata   0x0009b2    program   0x000000
+         .idata_uread.o_i    romdata   0x0009b2    program   0x000000
+         .romdata_uread.o    romdata   0x0009b2    program   0x000000
+        .idata_uwrite.o_i    romdata   0x0009b2    program   0x000000
+         .idata_udefs.o_i    romdata   0x0009b2    program   0x000000
+      .romdata_spi_writ.o    romdata   0x0009b2    program   0x000000
+      .idata_spi_writ.o_i    romdata   0x0009b2    program   0x000000
+         .romdata_udefs.o    romdata   0x0009b2    program   0x000000
+         .idata_c018i.o_i    romdata   0x0009b2    program   0x000000
+         .romdata_c018i.o    romdata   0x0009b2    program   0x000000
+          .romdata_Main.o    romdata   0x0009b2    program   0x000000
+         .romdata_Clock.o    romdata   0x0009b2    program   0x000000
+        .romdata_Blinky.o    romdata   0x0009b2    program   0x000000
+          .romdata_Led2.o    romdata   0x0009b2    program   0x000000
+      .idata_SevenSeg.o_i    romdata   0x0009b2    program   0x000010
+      .romdata_SevenSeg.o    romdata   0x0009b2    program   0x000000
+ .idata_UsartLoopback.o_i    romdata   0x0009b2    program   0x000000
+ .romdata_UsartLoopback.o    romdata   0x0009b2    program   0x000000
+      .idata_spi_open.o_i    romdata   0x0009b2    program   0x000000
+      .romdata_spi_open.o    romdata   0x0009b2    program   0x000000
+          .idata_Led2.o_i    romdata   0x0009c2    program   0x000000
+        .idata_Blinky.o_i    romdata   0x0009c2    program   0x000000
+            .code_udefs.o       code   0x0009c2    program   0x000000
+         .idata_Clock.o_i    romdata   0x0009c2    program   0x000000
+          .idata_Main.o_i    romdata   0x0009c2    program   0x000000
+            .code_c018i.o       code   0x0009c2    program   0x000000
     .config_300001_Main.o    romdata   0x300001    program   0x000001
     .config_300002_Main.o    romdata   0x300002    program   0x000001
     .config_300003_Main.o    romdata   0x300003    program   0x000001
@@ -99,66 +99,67 @@ Linker Map File - Created Mon Nov 10 11:46:28 2014
                               Program Memory Usage 
                                Start         End      
                            ---------   ---------      
-                            0x000000    0x000965      
+                            0x000000    0x0009c1      
                             0x300001    0x300003      
                             0x300006    0x300006      
-            2410 out of 33048 program addresses used, program memory utilization is 7%
+            2502 out of 33048 program addresses used, program memory utilization is 7%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                  OpenSPI   0x0007d2    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\SPI\spi_open.c
-               OpenTimer0   0x0008b4    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\Timers\t0open.c
-                OpenUSART   0x0006ca    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\USART\uopen.c
-                ReadUSART   0x00083a    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\USART\uread.c
-                 WriteSPI   0x000878    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\SPI\spi_writ.c
-               WriteUSART   0x0008ec    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\USART\uwrite.c
+                  OpenSPI   0x00082e    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\SPI\spi_open.c
+               OpenTimer0   0x000910    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\Timers\t0open.c
+                OpenUSART   0x000726    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\USART\uopen.c
+                ReadUSART   0x000896    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\USART\uread.c
+                 WriteSPI   0x0008d4    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\SPI\spi_writ.c
+               WriteUSART   0x000948    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\USART\uwrite.c
               _7SegmentSM   0x0000b2    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\SevenSeg.c
        ___return_lbl00000   0x000004    program     static                          
        ___return_lbl00000   0x00000c    program     static                          
-       ___return_lbl00001   0x000954    program     static                          
-       ___return_lbl00002   0x0006c8    program     static                          
-       ___return_lbl00003   0x00046a    program     static                          
+       ___return_lbl00001   0x0009b0    program     static                          
+       ___return_lbl00002   0x000724    program     static                          
+       ___return_lbl00003   0x000566    program     static                          
                __config_0   0x300001    program     static C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Main.c
                __config_1   0x300002    program     static C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Main.c
                __config_2   0x300003    program     static C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Main.c
                __config_3   0x300006    program     static C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Main.c
                    __init   0x000006    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\stdclib\__init.c
-            __zero_memory   0x00091a    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                _do_cinit   0x00062c    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\startup\c018i.c
+            __zero_memory   0x000976    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                _do_cinit   0x000688    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\startup\c018i.c
-                 _startup   0x00093a    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\startup\c018i.c
-    clearTimer0Overflowed   0x000404    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
-              closeModule   0x00058c    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Main.c
-                compare_l   0x000930    program     static C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-             configureLED   0x0007c6    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Blinky.c
-                copy_loop   0x00069e    program     static                          
-            copy_one_byte   0x0006a4    program     static                          
-                     done   0x0006c8    program     static                          
-             done_copying   0x0006b2    program     static                          
-                 getCLOCK   0x0004ca    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
-      hasTimer0Overflowed   0x0003fa    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
+                 _startup   0x000996    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\startup\c018i.c
+                      add   0x000408    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Main.c
+    clearTimer0Overflowed   0x0004f6    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
+              closeModule   0x0003fa    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Main.c
+                compare_l   0x00098c    program     static C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+             configureLED   0x000822    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Blinky.c
+                copy_loop   0x0006fa    program     static                          
+            copy_one_byte   0x000700    program     static                          
+                     done   0x000724    program     static                          
+             done_copying   0x00070e    program     static                          
+                 getCLOCK   0x0005c6    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
+      hasTimer0Overflowed   0x0004ec    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
           highPriorityIsr   0x000008    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
              init7Segment   0x00004a    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\SevenSeg.c
            init7SegmentHW   0x000098    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\SevenSeg.c
-                initClock   0x0004b2    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
-        initUsartLoopback   0x0004dc    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\UsartLoopback.c
+                initClock   0x0005ae    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
+        initUsartLoopback   0x0005d8    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\UsartLoopback.c
                    led2SM   0x000276    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Led2.c
-                     loop   0x00094a    program     static                          
-                   loop_h   0x000928    program     static C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                   loop_l   0x000932    program     static C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                     main   0x00059a    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Main.c
-                makeDelay   0x000754    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Blinky.c
-                   offLED   0x0007ce    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Blinky.c
-                    onLED   0x0007ca    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Blinky.c
-                     test   0x000646    program     static                          
+                     loop   0x0009a6    program     static                          
+                   loop_h   0x000984    program     static C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                   loop_l   0x00098e    program     static C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                     main   0x00044c    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Main.c
+                makeDelay   0x0007b0    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Blinky.c
+                   offLED   0x00082a    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Blinky.c
+                    onLED   0x000826    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Blinky.c
+                     test   0x0006a2    program     static                          
             testingLed2SM   0x00026a    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Led2.c
-                timer0Isr   0x000408    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
-          usartLoopbackSM   0x00050c    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\UsartLoopback.c
+                timer0Isr   0x0004fa    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
+          usartLoopbackSM   0x000608    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\UsartLoopback.c
             write7Segment   0x00001c    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\SevenSeg.c
-               zero_block   0x000928    program     static C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+               zero_block   0x000984    program     static C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    ADCON0   0x000fc2       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                ADCON0bits   0x000fc2       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    ADCON1   0x000fc1       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
@@ -367,10 +368,11 @@ Linker Map File - Created Mon Nov 10 11:46:28 2014
                   __REMB1   0x000002       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\math\aarg.asm
                   __REMB2   0x000001       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\math\aarg.asm
                   __REMB3   0x000000       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\math\aarg.asm
+                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Main.c
+                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Blinky.c
+                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Led2.c
                   __tmp_0   0x00000b       data     static C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\USART\uopen.c
                   __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\SevenSeg.c
-                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Led2.c
-                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Blinky.c
             bankSelectReg   0x00009f       data     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
                     clock   0x00009a       data     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
                 curr_byte   0x000093       data     static C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\startup\c018i.c
@@ -397,41 +399,42 @@ Linker Map File - Created Mon Nov 10 11:46:28 2014
               _7SegmentSM   0x0000b2    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\SevenSeg.c
             testingLed2SM   0x00026a    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Led2.c
                    led2SM   0x000276    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Led2.c
-      hasTimer0Overflowed   0x0003fa    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
-    clearTimer0Overflowed   0x000404    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
-                timer0Isr   0x000408    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
-       ___return_lbl00003   0x00046a    program     static                          
-                initClock   0x0004b2    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
-                 getCLOCK   0x0004ca    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
-        initUsartLoopback   0x0004dc    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\UsartLoopback.c
-          usartLoopbackSM   0x00050c    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\UsartLoopback.c
-              closeModule   0x00058c    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Main.c
-                     main   0x00059a    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Main.c
-                _do_cinit   0x00062c    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\startup\c018i.c
-                     test   0x000646    program     static                          
-                copy_loop   0x00069e    program     static                          
-            copy_one_byte   0x0006a4    program     static                          
-             done_copying   0x0006b2    program     static                          
-                     done   0x0006c8    program     static                          
-       ___return_lbl00002   0x0006c8    program     static                          
-                OpenUSART   0x0006ca    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\USART\uopen.c
-                makeDelay   0x000754    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Blinky.c
-             configureLED   0x0007c6    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Blinky.c
-                    onLED   0x0007ca    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Blinky.c
-                   offLED   0x0007ce    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Blinky.c
-                  OpenSPI   0x0007d2    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\SPI\spi_open.c
-                ReadUSART   0x00083a    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\USART\uread.c
-                 WriteSPI   0x000878    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\SPI\spi_writ.c
-               OpenTimer0   0x0008b4    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\Timers\t0open.c
-               WriteUSART   0x0008ec    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\USART\uwrite.c
-            __zero_memory   0x00091a    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-               zero_block   0x000928    program     static C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                   loop_h   0x000928    program     static C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                compare_l   0x000930    program     static C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                   loop_l   0x000932    program     static C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                 _startup   0x00093a    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\startup\c018i.c
-                     loop   0x00094a    program     static                          
-       ___return_lbl00001   0x000954    program     static                          
+              closeModule   0x0003fa    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Main.c
+                      add   0x000408    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Main.c
+                     main   0x00044c    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Main.c
+      hasTimer0Overflowed   0x0004ec    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
+    clearTimer0Overflowed   0x0004f6    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
+                timer0Isr   0x0004fa    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
+       ___return_lbl00003   0x000566    program     static                          
+                initClock   0x0005ae    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
+                 getCLOCK   0x0005c6    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Clock.c
+        initUsartLoopback   0x0005d8    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\UsartLoopback.c
+          usartLoopbackSM   0x000608    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\UsartLoopback.c
+                _do_cinit   0x000688    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\startup\c018i.c
+                     test   0x0006a2    program     static                          
+                copy_loop   0x0006fa    program     static                          
+            copy_one_byte   0x000700    program     static                          
+             done_copying   0x00070e    program     static                          
+       ___return_lbl00002   0x000724    program     static                          
+                     done   0x000724    program     static                          
+                OpenUSART   0x000726    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\USART\uopen.c
+                makeDelay   0x0007b0    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Blinky.c
+             configureLED   0x000822    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Blinky.c
+                    onLED   0x000826    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Blinky.c
+                   offLED   0x00082a    program     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Blinky.c
+                  OpenSPI   0x00082e    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\SPI\spi_open.c
+                ReadUSART   0x000896    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\USART\uread.c
+                 WriteSPI   0x0008d4    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\SPI\spi_writ.c
+               OpenTimer0   0x000910    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\Timers\t0open.c
+               WriteUSART   0x000948    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\USART\uwrite.c
+            __zero_memory   0x000976    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+               zero_block   0x000984    program     static C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                   loop_h   0x000984    program     static C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                compare_l   0x00098c    program     static C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                   loop_l   0x00098e    program     static C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                 _startup   0x000996    program     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\startup\c018i.c
+                     loop   0x0009a6    program     static                          
+       ___return_lbl00001   0x0009b0    program     static                          
                __config_0   0x300001    program     static C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Main.c
                __config_1   0x300002    program     static C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Main.c
                __config_2   0x300003    program     static C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Main.c
@@ -452,10 +455,11 @@ Linker Map File - Created Mon Nov 10 11:46:28 2014
                      SIGN   0x000009       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\math\cmath18.asm
             __FPFLAGSbits   0x00000a       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\math\cmath18.asm
                 __FPFLAGS   0x00000a       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\math\cmath18.asm
-                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Led2.c
-                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\SevenSeg.c
-                  __tmp_0   0x00000b       data     static C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\USART\uopen.c
+                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Main.c
                   __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Blinky.c
+                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\Led2.c
+                  __tmp_0   0x00000b       data     static C:\Program Files\Microchip\mplabc18\v3.37\src\pmc_common\USART\uopen.c
+                  __tmp_0   0x00000b       data     static C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\SevenSeg.c
                hexPattern   0x000080       data     extern C:\Documents and Settings\D300-01\Desktop\PcControl2\src\PIC18\SevenSeg.c
                      prom   0x000090       data     static C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\startup\c018i.c
                 curr_byte   0x000093       data     static C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\startup\c018i.c
@@ -478,52 +482,52 @@ Linker Map File - Created Mon Nov 10 11:46:28 2014
                     PORTD   0x000f83       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                 PORTEbits   0x000f84       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                     PORTE   0x000f84       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                     LATA   0x000f89       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                  LATAbits   0x000f89       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                     LATB   0x000f8a       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                     LATA   0x000f89       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                  LATBbits   0x000f8a       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                     LATC   0x000f8b       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                     LATB   0x000f8a       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                  LATCbits   0x000f8b       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                     LATD   0x000f8c       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                     LATC   0x000f8b       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                  LATDbits   0x000f8c       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                     LATE   0x000f8d       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                     LATD   0x000f8c       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                  LATEbits   0x000f8d       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                 DDRAbits   0x000f92       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                     LATE   0x000f8d       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                     TRISA   0x000f92       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                TRISAbits   0x000f92       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                      DDRA   0x000f92       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                 DDRAbits   0x000f92       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                TRISAbits   0x000f92       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                  DDRBbits   0x000f93       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                      DDRB   0x000f93       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                     TRISB   0x000f93       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                 TRISBbits   0x000f93       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                     TRISC   0x000f94       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                 TRISCbits   0x000f94       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                     DDRC   0x000f94       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                  DDRCbits   0x000f94       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                     DDRD   0x000f95       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                     DDRC   0x000f94       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                     TRISD   0x000f95       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                 DDRDbits   0x000f95       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                 TRISDbits   0x000f95       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                TRISEbits   0x000f96       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                    TRISE   0x000f96       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                 DDRDbits   0x000f95       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                     DDRD   0x000f95       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                  DDREbits   0x000f96       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                      DDRE   0x000f96       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                  OSCTUNE   0x000f9b       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                TRISEbits   0x000f96       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                    TRISE   0x000f96       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
               OSCTUNEbits   0x000f9b       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                 PIE1bits   0x000f9d       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                  OSCTUNE   0x000f9b       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                      PIE1   0x000f9d       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                 PIR1bits   0x000f9e       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                 PIE1bits   0x000f9d       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                      PIR1   0x000f9e       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                 PIR1bits   0x000f9e       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                  IPR1bits   0x000f9f       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                      IPR1   0x000f9f       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                  PIE2bits   0x000fa0       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                      PIE2   0x000fa0       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                 PIR2bits   0x000fa1       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                      PIR2   0x000fa1       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                 PIR2bits   0x000fa1       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                  IPR2bits   0x000fa2       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                      IPR2   0x000fa2       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-               EECON1bits   0x000fa6       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    EECON1   0x000fa6       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+               EECON1bits   0x000fa6       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    EECON2   0x000fa7       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    EEDATA   0x000fa8       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                     EEADR   0x000fa9       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
@@ -535,22 +539,22 @@ Linker Map File - Created Mon Nov 10 11:46:28 2014
                     RCREG   0x000fae       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                     SPBRG   0x000faf       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    SPBRGH   0x000fb0       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                T3CONbits   0x000fb1       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                     T3CON   0x000fb1       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                T3CONbits   0x000fb1       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                     TMR3L   0x000fb2       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                     TMR3H   0x000fb3       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                CMCONbits   0x000fb4       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                     CMCON   0x000fb4       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                CMCONbits   0x000fb4       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                CVRCONbits   0x000fb5       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    CVRCON   0x000fb5       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                   ECCPAS   0x000fb6       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-               ECCPASbits   0x000fb6       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
               ECCP1ASbits   0x000fb6       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                   ECCP1AS   0x000fb6       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                 ECCP1DEL   0x000fb7       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-              PWM1CONbits   0x000fb7       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+               ECCPASbits   0x000fb6       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                   ECCPAS   0x000fb6       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                   PWM1CON   0x000fb7       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+              PWM1CONbits   0x000fb7       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
              ECCP1DELbits   0x000fb7       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                 ECCP1DEL   0x000fb7       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                   BAUDCON   0x000fb8       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
               BAUDCONbits   0x000fb8       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                   BAUDCTL   0x000fb8       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
@@ -560,17 +564,17 @@ Linker Map File - Created Mon Nov 10 11:46:28 2014
                     CCPR2   0x000fbb       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    CCPR2L   0x000fbb       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    CCPR2H   0x000fbc       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                  CCP1CON   0x000fbd       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
               CCP1CONbits   0x000fbd       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                    CCPR1   0x000fbe       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                  CCP1CON   0x000fbd       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    CCPR1L   0x000fbe       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                    CCPR1   0x000fbe       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    CCPR1H   0x000fbf       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                   ADCON2   0x000fc0       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                ADCON2bits   0x000fc0       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                   ADCON1   0x000fc1       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                   ADCON2   0x000fc0       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                ADCON1bits   0x000fc1       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-               ADCON0bits   0x000fc2       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                   ADCON1   0x000fc1       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    ADCON0   0x000fc2       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+               ADCON0bits   0x000fc2       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                     ADRES   0x000fc3       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    ADRESL   0x000fc3       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    ADRESH   0x000fc4       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
@@ -578,8 +582,8 @@ Linker Map File - Created Mon Nov 10 11:46:28 2014
               SSPCON2bits   0x000fc5       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                   SSPCON1   0x000fc6       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
               SSPCON1bits   0x000fc6       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-              SSPSTATbits   0x000fc7       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                   SSPSTAT   0x000fc7       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+              SSPSTATbits   0x000fc7       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    SSPADD   0x000fc8       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    SSPBUF   0x000fc9       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                 T2CONbits   0x000fca       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
@@ -594,20 +598,20 @@ Linker Map File - Created Mon Nov 10 11:46:28 2014
                  RCONbits   0x000fd0       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                WDTCONbits   0x000fd1       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    WDTCON   0x000fd1       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                   LVDCON   0x000fd2       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                   HLVDCON   0x000fd2       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-               LVDCONbits   0x000fd2       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
               HLVDCONbits   0x000fd2       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-               OSCCONbits   0x000fd3       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                   LVDCON   0x000fd2       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+               LVDCONbits   0x000fd2       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    OSCCON   0x000fd3       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+               OSCCONbits   0x000fd3       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                 T0CONbits   0x000fd5       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                     T0CON   0x000fd5       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                     TMR0L   0x000fd6       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                     TMR0H   0x000fd7       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    STATUS   0x000fd8       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                STATUSbits   0x000fd8       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                     FSR2   0x000fd9       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                     FSR2L   0x000fd9       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                     FSR2   0x000fd9       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                     FSR2H   0x000fda       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    PLUSW2   0x000fdb       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                   PREINC2   0x000fdc       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
@@ -633,8 +637,8 @@ Linker Map File - Created Mon Nov 10 11:46:28 2014
                  POSTDEC0   0x000fed       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                  POSTINC0   0x000fee       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                     INDF0   0x000fef       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-              INTCON3bits   0x000ff0       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                   INTCON3   0x000ff0       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+              INTCON3bits   0x000ff0       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                   INTCON2   0x000ff1       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
               INTCON2bits   0x000ff1       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                INTCONbits   0x000ff2       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
@@ -643,16 +647,16 @@ Linker Map File - Created Mon Nov 10 11:46:28 2014
                      PROD   0x000ff3       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                     PRODH   0x000ff4       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    TABLAT   0x000ff5       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-                   TBLPTR   0x000ff6       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                   TBLPTRL   0x000ff6       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+                   TBLPTR   0x000ff6       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                   TBLPTRH   0x000ff7       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                   TBLPTRU   0x000ff8       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                       PCL   0x000ff9       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                        PC   0x000ff9       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    PCLATH   0x000ffa       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    PCLATU   0x000ffb       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
-               STKPTRbits   0x000ffc       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                    STKPTR   0x000ffc       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
+               STKPTRbits   0x000ffc       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                       TOS   0x000ffd       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                      TOSL   0x000ffd       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
                      TOSH   0x000ffe       data     extern C:\Program Files\Microchip\mplabc18\v3.37\src\traditional\proc\p18F4520.asm
