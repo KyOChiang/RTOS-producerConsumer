@@ -8,36 +8,31 @@ void addPriorityLinkedList(PriorityLinkedList *list, void *data, int compare(voi
 	Element *temp;
 	Element *subTemp;
 	Element *headTemp = list->head;
+	// If no new task(data), do nothing
 	if(data!=NULL){
+		//If list->head is NULL, just insert new task into head
 		if(headTemp == NULL){
 			if(compare(data,headTemp) == 1){
-				list->head = data; list->tail = data;
-				printf("Add new task to head.\n");
-			}
+				list->head = data; list->tail = data; }
 		}else if(headTemp != NULL){
 			while(headTemp != NULL){
+			//If head != NULL, compare and find out can insert or not
+			//If can insert, check the current head got next or not
+			//1 or 2 tempVariable needed to store previous head before updated
 				if(compare(data,headTemp) == 1){
 					temp = headTemp;
 					if(count>0) subTemp->next = data;
 					else list->head = data;
 					((Element *)data)->next = temp;
-					printf("Add new task\n");
 					headTemp = NULL;
 				}else if(compare(data,headTemp) == 0){
-				printf("2\n");
 					if(headTemp->next == NULL){
 						headTemp->next = data; list->tail = data;
 						headTemp = NULL;
-						printf("insert after task\n");
-					}
-					else{
-						printf("3\n");
+					}else{
 						subTemp = headTemp; headTemp = headTemp->next;
 					}
-				}count++;
-			}	
-		}
-	}printf("should not do anything if data is NULL\n\n");
+				}count++;}}}
 }
 
 void* removePriorityLinkedList(PriorityLinkedList *list, void *data, int compare(void *, void *)){
@@ -45,5 +40,11 @@ void* removePriorityLinkedList(PriorityLinkedList *list, void *data, int compare
 }
 
 void* removeFromHeadPriorityLinkedList(PriorityLinkedList *list){
-    return 0;
+	Element *headTemp = list->head;
+	if(headTemp != NULL){
+		list->head = headTemp->next;
+		if(headTemp->next == NULL) //if there only one TCB in linked list
+			list->tail = NULL;
+	}
+    return headTemp;
 }

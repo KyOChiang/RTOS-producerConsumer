@@ -78,3 +78,45 @@ void test_addPriorityLinkedList_should_insert_new_task_in_after_task_1_and_task_
 	TEST_ASSERT_EQUAL(&taskA,task2.next);
 	TEST_ASSERT_EQUAL(NULL,taskA.next);
 }
+
+void test_addPriorityLinkedList_should_insert_2_new_task_after_task_1_and_before_task_2(void){
+	TCB taskB = {.next=NULL, .priority = 1};
+	TCB taskA = {.next=NULL, .priority = 7};
+	TCB task2 = {.next=NULL, .priority = 9};
+	TCB task1 = {.next=&task2, .priority = 4};
+	
+	PriorityLinkedList LL = {.head = &task1, .tail = &task2};
+	
+	addTCB(&LL,&taskA);
+	addTCB(&LL,&taskB);
+	TEST_ASSERT_EQUAL(&taskB,LL.head);
+	TEST_ASSERT_EQUAL(&task2,LL.tail);
+	TEST_ASSERT_EQUAL(&task1,taskB.next);
+	TEST_ASSERT_EQUAL(&taskA,task1.next);
+	TEST_ASSERT_EQUAL(&task2,taskA.next);
+	TEST_ASSERT_EQUAL(NULL,task2.next);
+}
+
+void test_removeFromHeadPriorityLinkedList_should_remove_the_first_task_from_linked_list(){
+	TCB *returnTCB;
+	TCB task1 = {.next=NULL, .priority = 4};
+	PriorityLinkedList LL = {.head = &task1, .tail = &task1};
+	
+	returnTCB = removeFromHeadPriorityLinkedList(&LL);
+	TEST_ASSERT_EQUAL(NULL,LL.head);
+	TEST_ASSERT_EQUAL(NULL,LL.tail);
+	TEST_ASSERT_EQUAL(&task1,returnTCB);
+}
+
+void test_removeFromHeadPriorityLinkedList_should_remove_the_first_task_from_both_task(){
+	TCB *returnTCB;
+	TCB task2 = {.next=NULL, .priority = 4};
+	TCB task1 = {.next=&task2, .priority = 4};
+	PriorityLinkedList LL = {.head = &task1, .tail = &task2};
+	
+	returnTCB = removeFromHeadPriorityLinkedList(&LL);
+	TEST_ASSERT_EQUAL(&task2,LL.head);
+	TEST_ASSERT_EQUAL(&task2,LL.tail);
+	TEST_ASSERT_EQUAL(&task1,returnTCB);
+}
+

@@ -40,7 +40,7 @@ void taskTwo(void){
     }
 }
 
-void initPriorityMultitasking(){
+void initPreemptiveMultitasking(){
     runningTCB = &allTcbs[0];
     createTask(allTcbs, 1, taskOne);
     createTask(allTcbs, 2, taskTwo);

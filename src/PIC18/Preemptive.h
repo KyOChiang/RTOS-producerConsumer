@@ -12,5 +12,6 @@
 extern TCB *runningTCB;
 void taskOne(void);
 void taskTwo(void);
+void initPreemptiveMultitasking();
 #endif	/* PREEMPTIVE_H */
 
