@@ -1,24 +1,20 @@
 #ifndef _TASK_CONTROL_BLOCK_H_
 #define _TASK_CONTROL_BLOCK_H_
-
-typedef int             int16;
-typedef long            int32;
-typedef char            int8;
-typedef unsigned int    uint16;
-typedef unsigned long   uint32;
-typedef unsigned char   uint8;
+#include "Type.h"
 
 typedef struct TCB TCB;
 struct TCB{
-	TCB* next;
-	uint8 priority;
-	int dataStack;
-	char status;
+    TCB* next;
+    uint8 priority;
+    uint8 taskID;
+    uint16 task;
     uint16 stackPointer;
-    int16 framePointer;
-    char bsr;
-    char Wreg;
-    void (*task)(void); //Pointer to address//TOS
+    uint16 framePointer;
+    //int dataStack;
+    //char status;
+    //char bsr;
+    //char Wreg;
+    //void (*task)(void); //Pointer to address//TOS
 };
 
 int compareTCBPriority(void *elementOfInterest, void *elementInList);

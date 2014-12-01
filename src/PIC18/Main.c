@@ -4,18 +4,23 @@
 
 #include "includePIC18.h"
 
-void closeModule(){
-    CloseUSART();
-    CloseSPI();
-}
-
 char add(char a, char b){
     int result;
     result = a+b;
     return result;
 }
 
+void main(void) {
+  initPreemptiveMultitasking();
+  initClock();
+  while(1);
+}
 
+/*
+void closeModule(){
+    CloseUSART();
+    CloseSPI();
+}
 void main(void) {
   
   LoopbackData loopbackData;
@@ -38,7 +43,7 @@ void main(void) {
     _7SegmentSM(&_7SegData);
   }
   closeModule();
-}
+}*/
 
 
 /* Test to blink LED.

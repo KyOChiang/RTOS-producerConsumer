@@ -1,4 +1,4 @@
-build/default/production/_ext/1555453033/Main.o:  \
+build/default/debug/_ext/1555453033/Main.o:  \
 	C:/Documents\ and\ Settings/D300-01/Desktop/PcControl2/src/PIC18/Main.c  \
 	C:/Documents\ and\ Settings/D300-01/Desktop/PcControl2/src/PIC18/Blinky.h  \
 	C:/Documents\ and\ Settings/D300-01/Desktop/PcControl2/src/PIC18/Led2.h  \

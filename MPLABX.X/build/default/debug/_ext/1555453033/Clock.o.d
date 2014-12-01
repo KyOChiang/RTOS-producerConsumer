@@ -1,4 +1,4 @@
-build/default/production/_ext/1555453033/Clock.o:  \
+build/default/debug/_ext/1555453033/Clock.o:  \
 	C:/Documents\ and\ Settings/D300-01/Desktop/PcControl2/src/PIC18/Clock.c  \
 	C:/Documents\ and\ Settings/D300-01/Desktop/PcControl2/src/PIC18/TaskControlBlock.h  \
 	C:/Documents\ and\ Settings/D300-01/Desktop/PcControl2/src/PIC18/PriorityLinkedList.h  \

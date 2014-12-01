@@ -8,10 +8,11 @@
 #ifndef PREEMPTIVE_H
 #define	PREEMPTIVE_H
 #include "TaskControlBlock.h"
-
+#include "PriorityLinkedList.h"
+extern PriorityLinkedList readyQueue;
 extern TCB *runningTCB;
 void taskOne(void);
 void taskTwo(void);
-void initPreemptiveMultitasking();
+void initPreemptiveMultitasking(void);
 #endif	/* PREEMPTIVE_H */
 

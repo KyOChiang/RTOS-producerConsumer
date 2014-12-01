@@ -20,6 +20,9 @@
 #include "UsartLoopback.h"
 #include "Tasking.h"
 #include "Interrupt.h"
+#include "PriorityLinkedList.h"
+#include "TaskControlBlock.h"
+#include "Preemptive.h"
 #include "../18c.h"
 #if !(defined(__XC) || defined(__18CXX))
   #include "usart.h"

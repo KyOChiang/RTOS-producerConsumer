@@ -1,13 +1,20 @@
 #include "Clock.h"
 #include "Interrupt.h"
+#include "Preemptive.h"
+#include "Type.h"
 #include "../18c.h"
-#include "TaskControlBlock.h"
-#include "PriorityLinkedList.h"
-#include <timers.h>
+
+#if !(defined(__XC) || defined(__18CXX))
+  #include "timers.h"
+#else
+  #include <timers.h>
+#endif // __18CXX
 
 volatile unsigned long clock;
-char workingReg, bankSelectReg, statusReg, TOSHi, TOSLo;
-#pragma interrupt timer0Isr
+uint8 workingReg, bankSelectReg, statusReg, TOSHi, TOSLow;
+uint16 task;
+
+#pragma interruptlow timer0Isr//why low? To store status/WREG/BSR, otherwise it store to shadow register(shadow reg only has one and may replacing by next interrupt)
 #pragma code high_vector=0x08
 void highPriorityIsr(void){
     _asm
@@ -15,39 +22,42 @@ void highPriorityIsr(void){
     _endasm
 }
 #pragma code
-/////////////////////////////////////////
-// These functions are for internal use
-/////////////////////////////////////////
-char hasTimer0Overflowed(void) {
-  return INTCONbits.TMR0IF;
-}
-
-void clearTimer0Overflowed(void) {
-  INTCONbits.TMR0IF = 0;
-}
-
 
 void timer0Isr(void) {
-    
-  _asm
-    movff WREG, workingReg
-    movff STATUS, statusReg
-    movff BSR, bankSelectReg
-
-    movff TOSH, TOSHi
-    movff TOSL, TOSLo
-  _endasm
-  // save all above in asm into running TCB
+  TCB *newTCB;
+  TOSHi = TOSH;
+  TOSLow = TOSL;
+  clock++;
+  clearTimer0Overflowed();
   // Get the highest priority task from the priority linked list
   // Insert the runningTCB into priority linked list
   // Restore all data in high priority task to
             // - TOS
-            // - BSR
-            // - STATUS
-            // - WREG
+            // - Stack Pointer
   // return from interrupt
-  clock++;
-  clearTimer0Overflowed();
+  
+  task = ((uint16)TOSHi)<<8 |TOSLow;
+  runningTCB->task = task;
+  //runningTCB->stackPointer = FSR1;
+  newTCB = removeFromHeadPriorityLinkedList(&readyQueue);
+  addTCB(&readyQueue, runningTCB);
+  runningTCB = newTCB;
+
+  TOSLow = runningTCB->task;
+  TOSHi = (runningTCB->task)>>8;
+
+  _asm
+          movff TOSHi,WREG
+          movwf TOSH,ACCESS
+          movff TOSLow,WREG
+          movwf TOSL,ACCESS
+  _endasm
+  //_asm
+  // movff   tosHi, WREG
+  //  movwf   TOSH, ACCESS
+  //  movff   tosLo, WREG
+  // movwf   TOSL, ACCESS
+  //_endasm
 }
 
 void initClock(void) {
@@ -70,4 +80,16 @@ unsigned long getCLOCK(void) {
   }*/
   return clock;
 }
+
+/////////////////////////////////////////
+// These functions are for internal use
+/////////////////////////////////////////
+char hasTimer0Overflowed(void) {
+  return INTCONbits.TMR0IF;
+}
+
+void clearTimer0Overflowed(void) {
+  INTCONbits.TMR0IF = 0;
+}
+
 

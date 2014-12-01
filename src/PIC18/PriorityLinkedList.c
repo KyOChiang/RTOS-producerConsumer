@@ -28,7 +28,7 @@ void addPriorityLinkedList(PriorityLinkedList *list, void *data, int compare(voi
 				}else if(compare(data,headTemp) == 0){
 					if(headTemp->next == NULL){
 						headTemp->next = data; list->tail = data;
-						headTemp = NULL;
+						headTemp = NULL;//Just want to exit the while loop/ since this is temp pointer, it
 					}else{
 						subTemp = headTemp; headTemp = headTemp->next;
 					}
@@ -45,6 +45,7 @@ void* removeFromHeadPriorityLinkedList(PriorityLinkedList *list){
 		list->head = headTemp->next;
 		if(headTemp->next == NULL) //if there only one TCB in linked list
 			list->tail = NULL;
+        headTemp->next = NULL;
 	}
     return headTemp;
 }
