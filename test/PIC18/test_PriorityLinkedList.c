@@ -98,6 +98,18 @@ void test_addPriorityLinkedList_should_insert_new_task_in_after_task_1_and_task_
 	addTCB(&LL,&task1);
 	returnTCB = removeFromHeadPriorityLinkedList(&LL);
 	addTCB(&LL,&task2);
+	returnTCB = removeFromHeadPriorityLinkedList(&LL);
+	addTCB(&LL,&taskA);
+	returnTCB = removeFromHeadPriorityLinkedList(&LL);
+	addTCB(&LL,&task1);
+	returnTCB = removeFromHeadPriorityLinkedList(&LL);
+	addTCB(&LL,&task2);
+	returnTCB = removeFromHeadPriorityLinkedList(&LL);
+	addTCB(&LL,&taskA);
+	returnTCB = removeFromHeadPriorityLinkedList(&LL);
+	addTCB(&LL,&task1);
+	returnTCB = removeFromHeadPriorityLinkedList(&LL);
+	addTCB(&LL,&task2);
 }
 
 void test_addPriorityLinkedList_should_insert_2_new_task_after_task_1_and_before_task_2(void){

@@ -11,10 +11,9 @@
 #endif // __18CXX
 
 volatile unsigned long clock;
-uint8 workingReg, bankSelectReg, statusReg, TOSHi, TOSLow;
-uint16 task;
+uint8 workingReg, bankSelectReg, statusReg, TOSHi, TOSLow, stkPTRH, stkPTRL;
+uint16 task, stackPointer;
 
-#pragma interruptlow timer0Isr//why low? To store status/WREG/BSR, otherwise it store to shadow register(shadow reg only has one and may replacing by next interrupt)
 #pragma code high_vector=0x08
 void highPriorityIsr(void){
     _asm
@@ -23,6 +22,7 @@ void highPriorityIsr(void){
 }
 #pragma code
 
+#pragma interruptlow timer0Isr save=FSR2L//why low? To store status/WREG/BSR, otherwise it store to shadow register(shadow reg only has one and may replacing by next interrupt)
 void timer0Isr(void) {
   TCB *newTCB;
   TOSHi = TOSH;
@@ -38,7 +38,10 @@ void timer0Isr(void) {
   
   task = ((uint16)TOSHi)<<8 |TOSLow;
   runningTCB->task = task;
-  //runningTCB->stackPointer = FSR1;
+  stkPTRH = FSR1H;
+  stkPTRL = FSR1L;
+  stackPointer = (uint16)stkPTRH<<8|stkPTRL;
+  runningTCB->stackPointer = stackPointer;
   newTCB = removeFromHeadPriorityLinkedList(&readyQueue);
   addTCB(&readyQueue, runningTCB);
   runningTCB = newTCB;
@@ -52,12 +55,9 @@ void timer0Isr(void) {
           movff TOSLow,WREG
           movwf TOSL,ACCESS
   _endasm
-  //_asm
-  // movff   tosHi, WREG
-  //  movwf   TOSH, ACCESS
-  //  movff   tosLo, WREG
-  // movwf   TOSL, ACCESS
-  //_endasm
+  stackPointer = runningTCB->stackPointer;
+  FSR1H = stackPointer>>8;
+  FSR1L = stackPointer;
 }
 
 void initClock(void) {

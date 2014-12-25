@@ -11,9 +11,12 @@ char add(char a, char b){
 }
 
 void main(void) {
+    int count = 0;
   initPreemptiveMultitasking();
   initClock();
-  while(1);
+  while(1){
+      count += add(3,2);
+  }
 }
 
 /*
