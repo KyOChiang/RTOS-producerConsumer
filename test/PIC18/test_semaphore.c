@@ -72,6 +72,13 @@ void test_downSemaphore_given_sema_count_is_3_taskA_cannot_minus_count_after_3_t
   
   TEST_ASSERT_EQUAL(0,sema.count);
   TEST_ASSERT_EQUAL(3,sema.maxCount);
+  TEST_ASSERT_EQUAL_PTR(NULL,sema.waitingQueue.head);
+  TEST_ASSERT_EQUAL_PTR(NULL,sema.waitingQueue.tail);
+  
+  downSemaphore(&sema);
+  
+  TEST_ASSERT_EQUAL(0,sema.count);
+  TEST_ASSERT_EQUAL(3,sema.maxCount);
   TEST_ASSERT_EQUAL_PTR(&taskA,sema.waitingQueue.head);
   TEST_ASSERT_EQUAL_PTR(&taskA,sema.waitingQueue.tail);
   TEST_ASSERT_EQUAL_PTR(NULL,taskA.next);

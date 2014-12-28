@@ -18,7 +18,7 @@ void upSemaphore(Semaphore *semaphore){
   TCB* taskWakedUp;
   if(semaphore->count<semaphore->maxCount){
     semaphore->count++;
-    if(semaphore->count == semaphore->maxCount){
+    while((semaphore->waitingQueue).head != NULL){
       taskWakedUp = removeFromHeadPriorityLinkedList(&(semaphore->waitingQueue));
       addTCB(&readyQueue,taskWakedUp);
     }
@@ -31,7 +31,7 @@ void downSemaphore(Semaphore *semaphore){
 // if = 0, wake up/ release task in wating queue
   if(semaphore->count > 0)
     semaphore->count--;
-  if(semaphore->count == 0)
+  else if(semaphore->count == 0)
     addTCB(&(semaphore->waitingQueue),runningTCB);
   
 }

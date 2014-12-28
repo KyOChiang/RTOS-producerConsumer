@@ -1,8 +1,8 @@
-#include <stdio.h>
-#include "Mutex.h"
 #include "TaskControlBlock.h"
 #include "PriorityLinkedList.h"
 #include "Preemptive.h"
+#include <stdio.h>
+#include "Mutex.h"
 
 void initMutex(Mutex *mutex){
 	mutex->count = 1;
